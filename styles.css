@@ -1,0 +1,373 @@
+li,
+ul {
+  list-style: none;
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#header-2023 {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  top: 0;background-color: white;
+}
+.container-top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  height: 2rem;
+  padding: 0.5em 2em 0 2em;
+}
+.o-input {
+  display: flex;
+  width: 33%;
+  align-items: center;
+  justify-content: flex-start;
+}
+.o-input input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  color: black;
+  outline: none;
+}
+.o-input input::placeholder {
+  color: black;
+  font-family: "Work Sans", sans-serif;
+}
+
+.o-logo {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o-logo img {
+  max-width: 220px;
+  display: block;
+}
+.o-login-cart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 33%;
+}
+.o-iconos-container {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.container-bottom-header {
+  width: 100%;
+  /*padding: 0 2em;*/
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.container-bottom-header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 8px;
+}
+
+.container-bottom-header ul li a {
+  text-decoration: none;
+  color: black;
+  font-family: "Work Sans", sans-serif;
+}
+
+.submenu {
+  display: none;
+}
+.menu-item {
+  margin: 8px 8px;
+}
+
+.menu-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 30%;
+}
+.menu-header ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 40px;
+}
+.menu-header ul li {
+  margin: 5px 0;
+}
+
+.ver-todo a {
+  font-weight: 700;
+}
+
+.title-menu a {
+  font-weight: 700;
+}
+.imagen-menu {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 70%;
+}
+.imagen-menu a {
+  position: relative;
+}
+.img-overlay {
+  background: rgba(0, 0, 0, 0.24);
+  width: 100%;
+}
+.imagen-menu a img {
+  width: 100%;
+  transition: 0.3s all ease-in-out;
+}
+
+
+.imagen-menu a h2 {
+  position: absolute;
+  top: 80%;
+  left: 35%;
+  color: white;
+  font-family: "Work Sans";
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.top-bar-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 0.2em;
+  background-color: #dc1d23;
+}
+.topbar {
+  display: flex;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+.topbar-text {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+.topbar a {
+  text-decoration: none;
+}
+.topbar a p {
+  color: white;
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+.anim {
+  animation: mover linear 8s infinite;
+}
+
+
+@keyframes mover {
+  0% {
+    right: 0%;
+  }
+  48% {
+    right: 0%;
+  }
+  50% {
+    right: 100%;
+  }
+  98% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+.o-openMenuMobile {
+  display: none;
+}
+.o-closeMenuMobile {
+  display: none;
+}
+.contenidos{
+  margin-top: 9rem;
+}
+.o-input-mb{display: none;}
+@media (hover: hover) {
+  .anim:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+  .imagen-menu a img:hover {
+    filter: brightness(0.8);
+  }
+  .ver-todo a:hover {
+    font-weight: 700 !important;
+  }
+  .menu-header ul li a:hover {
+    font-weight: 500;
+  }
+  .menu-item:hover .submenu {
+    position: absolute;
+    background: #fff;
+    left: 0px;
+    right: 0%;
+    color: #fff;
+    padding: 25px;
+    min-height: 376px;
+    display: flex;
+    flex-direction: row;
+    transition: all 1s ease-in-out;
+    border-bottom: 1px solid #0000001f;
+  }
+}
+
+/*MEDIA QUERIES DE HEADER*/
+@media (max-width: 687px) {
+  .container-top-header {
+    padding: 0.5em;
+    height: 4em;
+  }
+  .o-logo img {
+    max-width: 150px;
+  }
+  .o-input {
+    display: none;
+  }
+  .o-iconos-container {
+    width: 50%;
+  }
+  .o-openMenuMobile {
+    display: flex;
+    width: 33%;
+  }
+  /*ESTILOS PARA OCULTAR Y MOSTRAR MENÚ HAMBURGUESA*/
+  .hide {
+    display: none;
+  }
+  .show {
+    display: flex;
+    width: 33%;
+  }
+  /*ESTILOS DE MENÚ DESPLEGABLE*/
+  .container-bottom-header {
+    height: auto;
+    justify-content: flex-start;
+    position: absolute;
+    align-items: start;
+    left: -687px;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: white;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+    flex-direction: column;
+  }
+  .active {
+    left: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  .container-bottom-header ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+  }
+  .container-bottom-header ul li {
+    padding: 0.5em 0;
+  }
+  .menu-header{
+    width: 100%;
+    flex-direction: column;
+  }
+  .menu-header ul li{
+    display: none;
+  }
+.title-menu {
+  display: flex!important;
+  padding-left: 0!important;
+}
+.title-menu a{ 
+  font-weight: 400;
+}
+  .desplegar{
+   display: block!important;
+  }
+  .desplegar-item{
+    display: block!important;
+   
+  }
+  .imagen-menu{
+    display: none;
+  }
+
+  .submenu a{
+    font-weight: 300;
+  }
+  .title-menu a{
+    font-weight: 700;
+  }
+  .title-menu.desplegar-item a{
+    padding-left: 0;
+    font-weight: 700;
+
+  }
+  .menu-header ul li.desplegar-item{
+    padding-left: 1em;
+  
+  }
+  .o-input-mb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2em;
+    
+  }
+ .o-input-mb input{
+  width: 75%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  color: black;
+  outline: none;
+ }
+ .o-input-mb input::placeholder{
+  color: black;
+  font-family: "Work Sans", sans-serif;
+ }
+ 
+ 
+  /*
+  .title-menu {
+    display: flex!important;
+  }
+.menu-header ul li{
+  display: none;
+}*/
+
+
+
+  
+  
+}
