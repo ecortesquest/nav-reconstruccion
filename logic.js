@@ -447,7 +447,6 @@ var questFunctions = (function () {
 
       if ($(window).width() <= 600) {
         $(document).on(
-            
           "click",
           "#new-header .container-header .menuNew ul li.hasMenu > a",
           function (e) {
@@ -653,3 +652,9 @@ jQuery(document).ready(function () {
   });
 
 console.log("first");
+
+var y = function(a,b){
+    var resultado = a+b;
+  return resultado
+}
+console.log(y(5,6);)
