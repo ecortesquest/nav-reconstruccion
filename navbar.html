@@ -644,10 +644,9 @@
           </li>
         </ul>
         <div class="o-input-mb">
-          <input placeholder="BUSCAR" type="text">
+          <input placeholder="BUSCAR" type="text" />
         </div>
       </div>
-
     </header>
 
     <div class="contenidos">
@@ -671,26 +670,24 @@
     ></script>
 
     <script type="text/javascript">
-      
-  if ($(window).width() <= 600) {
-    $(".o-openMenuMobile").click(function () {
-              $(".o-openMenuMobile").addClass("hide");
-              $(".o-closeMenuMobile").addClass("show");
-              $(".container-bottom-header").addClass("active");
-            });
+      if ($(window).width() <= 600) {
+        $(".o-openMenuMobile").click(function () {
+          $(".o-openMenuMobile").addClass("hide");
+          $(".o-closeMenuMobile").addClass("show");
+          $(".container-bottom-header").addClass("active");
+        });
 
-            $(".o-closeMenuMobile").click(function () {
-              $(".o-openMenuMobile").removeClass("hide");
-              $(".o-closeMenuMobile").removeClass("show");
-              $(".container-bottom-header").removeClass("active");
-            });
+        $(".o-closeMenuMobile").click(function () {
+          $(".o-openMenuMobile").removeClass("hide");
+          $(".o-closeMenuMobile").removeClass("show");
+          $(".container-bottom-header").removeClass("active");
+        });
 
-            $(document).on(
-            
+        $(document).on(
           "click",
           "#header-2023 .container-bottom-header ul li.menu-item > a",
           function (e) {
-            console.log("chanda")
+            console.log("chanda");
             if ($(this).parent().find(".submenu").hasClass("desplegar")) {
               $(
                 "#header-2023 .container-bottom-header ul li.menu-item .submenu"
@@ -703,12 +700,13 @@
             e.preventDefault();
           }
         );
+       
 
         $(document).on(
           "click",
           "#header-2023 .container-bottom-header ul li.menu-item .submenu.desplegar .title-menu",
           function (e) {
-              $(".title-menu a").removeAttr("href");
+            $(".title-menu a").removeAttr("href");
             if ($(this).parent().find("li").hasClass("desplegar-item")) {
               $(this).parent().find("li").removeClass("desplegar-item");
             } else {
@@ -716,8 +714,10 @@
             }
           }
         );
+        // $(document).on("click", ".buscadorCustomVtex", function (e) {console.log("holamundo")});
+        
 
-          /*  $(".menu-item").click(function () {
+        /*  $(".menu-item").click(function () {
               $(".submenu").addClass("desplegar");
             });
 
@@ -725,11 +725,29 @@
               $(".title-menu a").removeAttr("href");
 
             });*/
-  }
-
-
-           
-            
+      }
+      function goToSearchMobile() {
+          var urlToSearch = jQuery(
+            "#header-2023 .container-top-header .o-input .buscadorCustomVtex"
+          ).val();
+          "" != urlToSearch && (window.location.href = "/" + urlToSearch);
+        }
+        function goToSearch() {
+          var urlToSearch = jQuery("#header-2023 .container-top-header .o-input .buscadorCustomVtex").val();
+          "" != urlToSearch && (window.location.href = "/" + urlToSearch);
+        }
+        jQuery(document).on("click", ".toSearch", function () {
+          goToSearch();
+        }),
+          jQuery("#header-2023 .container-top-header .o-input .buscadorCustomVtex").keypress(
+            function (e) {
+              13 == e.which && goToSearchMobile();
+              console.log("enter");
+            }
+          ),
+          jQuery("#header-2023 .container-top-header .o-input .buscadorCustomVtex").keypress(function (e) {
+            13 == e.which && goToSearch();
+          });
     </script>
   </body>
 </html>
