@@ -609,6 +609,11 @@ content: "\f107";
     color: black;
 }
 
+.items-moviles{
+display: none;
+
+}
+
 
 
 /*MEDIA HOVERS*/
@@ -712,8 +717,23 @@ content: "\f107";
     padding-left: 8px;
   }
   .menu-header ul li {
-    display: none;
+    /*display: block;*/
+    padding: 0.5em 0;
+    padding-left: 1em;
   }
+  .items-moviles{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title-menu-hidden{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background: white;
+  }
+
   .title-menu {
     display: flex !important;
     padding-left: 0 !important;
@@ -749,6 +769,10 @@ content: "\f107";
   }
   .submenu a {
     font-weight: 300;
+  }
+  .titulo-submenu-movil{
+    color: black;
+    font-family: "Work Sans Bold", sans-serif;
   }
   .title-menu a {
     font-weight: 700;
