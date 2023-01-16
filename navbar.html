@@ -795,7 +795,7 @@
             </div>
             <div class="mm-nuevo-h">
               <ul class="mm-items">
-                <li><a>NUEVO</a></li>
+                <li id="ola"><a>NUEVO</a></li>
                 <li><a>JEANS</a></li>
                 <li><a>ROPA</a></li>
                 <li><a>POLOS</a></li>
@@ -805,7 +805,7 @@
               </ul>
             </div>
 
-            <div class="mm-nuevo-m">
+            <div class="mm-nuevo-m" id="nuevo-mujer">
               <ul class="mm-items">
                 <li><a>NUEVO</a></li>
                 <li><a>ROPA</a></li>
@@ -834,17 +834,24 @@
           </div>
         </header>
 
-        <div class="contenidos">
-          <h2>contenido</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-            quaerat non fugiat molestiae dolores odit labore eveniet! Dolores
-            alias vel atque repudiandae officia eum tenetur. Omnis perferendis
-            nostrum, inventore obcaecati in, vitae rerum tempora voluptatibus
-            voluptates, similique placeat distinctio id. Atque aspernatur sit
-            voluptatibus nihil debitis et molestiae amet nesciunt.
-          </p>
-        </div>
+        <main class="main-quest2023">
+          <div class="banner-home">
+            <div class="img-banner">
+               <img src="./img/pexels-anna-shvets-5325586.jpg" alt="Quest ropa para hombre y mujer">
+                <img src="./img/pexels-anna-shvets-5325586.jpg" alt="Quest ropa para hombre y mujer">
+               <img src="./img/pexels-anna-shvets-5325586.jpg" alt="Quest ropa para hombre y mujer">
+            </div>
+            <div class="banner-btns">
+              <h1>NUEVA COLECCIÓN</h1>
+              <p>¡Diseñada para personas como tú!</p>
+              <div class="b-btns">
+                <a href="">HOMBRE</a>
+              <a href="">MUJER</a>
+              </div>
+            </div>
+          </div>
+
+        </main>
 
         <script src="https://io.vtex.com.br/front-libs/jquery/1.8.3/jquery-1.8.3.min.js?v=1.5.63.2494"></script>
         <script
@@ -887,23 +894,30 @@
             });
             /* OCULTAR Y MOSTRAR OTROS MENÚS*/
 
+            
+
             $(document).on("click", ".mm-items > li", function (e) {
+
               
-              var seleccion = $(this).text();
+              console.log($(this).attr('id'));
+              
+            
+              
+              /*var seleccion = $(this).text();
               switch (seleccion) {
                 case "value":
                   break;
                 case "ROPA":
                   $(".mm-ropa").addClass("mm-transladar");
                   $(".mm-ropa").addClass("mm-transladar");
+                
                   break;
 
                 default:
                   break;
-              }
-
-              e.preventDefault();
+              }*/
             });
+            
 
             $(document).on(
               "click",

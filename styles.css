@@ -16,6 +16,7 @@ body {
   position: fixed;
   top: 0;
   background-color: white;
+  z-index: 999;
 }
 .container-top-header {
   display: flex;
@@ -609,6 +610,73 @@ svg#capa_2 {
   font-family: "Work Sans";
   font-size: 18px;
   color: black;
+}
+.menu-movil{
+  display: none;
+}
+.main-quest2023{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-home{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  
+}
+.img-banner{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.banner-home img{
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.banner-btns{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  width: 50%;
+  flex-direction: column;
+  gap: 1rem;
+}
+.banner-btns h1{
+  font-size: 32px;
+  color: white;
+  font-family: 'work sans';
+  margin: 0;
+}
+
+.banner-btns p{
+  font-size: 18px;
+  color: white;
+  font-family: 'work sans';
+  margin: 0;
+}
+.b-btns{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.banner-btns a{
+  background: black;
+  z-index: 55;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-family:'work sans';
+  padding: 1rem 4rem;
 }
 
 /*MEDIA HOVERS*/
