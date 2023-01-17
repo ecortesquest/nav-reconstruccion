@@ -877,6 +877,10 @@
                 <div class="o-r-l">
                   <img src="./img/para-salir.png" alt="Outfit para salir" />
                   <img src="./img/chaquetas.png" alt="Chaquetas en Quest" />
+                  <div class="o-cat-title">
+                    <h2>CAMISETAS</h2>
+                    <a class="o-custom-btn" href=""> VER MÁS</a>
+                  </div>
                 </div>
                 <div class="o-r-r">
                   <img src="./img/enterizos.png" alt="Enterizos en Quest" />
@@ -908,6 +912,24 @@
         ></script>
 
         <script type="text/javascript">
+          if ($(window).width() >= 600) {
+          var num = 62; //number of pixels before modifying styles
+
+          $(window).bind("scroll", function () {
+            if ($(window).scrollTop() > num) {
+              $(".container-bottom-header").addClass("fixed");
+            } else {
+              $(".container-bottom-header").removeClass("fixed");
+            }
+
+            if ($(window).scrollTop() < num) {
+                console.log("nene")
+
+            }
+          });
+
+        }
+
           $(".btn-hombre").hover(
             function () {
               $("#img-default").fadeOut(200);
@@ -959,6 +981,7 @@
               $(".selec-mujer").removeClass("isSelected");
               $(".selec-hombre").addClass("isSelected");
             });
+
             /* OCULTAR Y MOSTRAR OTROS MENÚS*/
 
             $(document).on("click", ".mm-items > li", function (e) {
