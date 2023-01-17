@@ -780,7 +780,6 @@
             </div>
           </div>
 
-          
           <!--INICIO DE MENU MOVIL-EN DESARROLLO-->
 
           <div class="menu-movil">
@@ -837,20 +836,67 @@
         <main class="main-quest2023">
           <div class="banner-home">
             <div class="img-banner">
-               <img src="./img/pexels-anna-shvets-5325586.jpg" alt="Quest ropa para hombre y mujer">
-                <img src="./img/pexels-anna-shvets-5325586.jpg" alt="Quest ropa para hombre y mujer">
-               <img src="./img/pexels-anna-shvets-5325586.jpg" alt="Quest ropa para hombre y mujer">
+              <img
+                src="./img/behrouz-sasani-6OGml3UomZw-unsplash.jpg"
+                alt="Quest ropa para hombre y mujer"
+                id="img-hombre"
+              />
+              <img
+                src="./img/pexels-brigitte-bohórquez-13865554.jpg"
+                alt="Quest ropa para hombre y mujer"
+                id="img-mujer"
+              />
+              <img
+                src="./img/pexels-anna-shvets-5325586.jpg"
+                alt="Quest ropa para hombre y mujer"
+                id="img-default"
+              />
             </div>
             <div class="banner-btns">
               <h1>NUEVA COLECCIÓN</h1>
               <p>¡Diseñada para personas como tú!</p>
               <div class="b-btns">
-                <a href="">HOMBRE</a>
-              <a href="">MUJER</a>
+                <a class="btn-hombre">HOMBRE</a>
+                <a class="btn-mujer">MUJER</a>
               </div>
             </div>
           </div>
 
+          <!--CATEGORIAS-->
+          <h2>categorias</h2>
+          <div class="o-categorias-contenedor">
+            <div class="o-cat-top">
+              <div class="o-ct-left">
+                <img src="./img/camisetas.png" alt="Camisetas en Quest" />
+                <div class="o-cat-title">
+                  <h2>CAMISETAS</h2>
+                  <a class="o-custom-btn" href=""> VER MÁS</a>
+                </div>
+              </div>
+              <div class="o-ct-right">
+                <div class="o-r-l">
+                  <img src="./img/para-salir.png" alt="Outfit para salir" />
+                  <img src="./img/chaquetas.png" alt="Chaquetas en Quest" />
+                </div>
+                <div class="o-r-r">
+                  <img src="./img/enterizos.png" alt="Enterizos en Quest" />
+                  <div class="o-cat-title">
+                    <h2>CAMISETAS</h2>
+                    <a class="o-custom-btn" href=""> VER MÁS</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="o-cat-bottom">
+              <div class="o-cb-img-cont">
+                <img src="./img/gafas.png" alt="Gafas en Quest" />
+              </div>
+              <div class="o-cat-title">
+                <h2>GAFAS</h2>
+                <a class="o-custom-btn" href=""> VER MÁS</a>
+              </div>
+            </div>
+          </div>
         </main>
 
         <script src="https://io.vtex.com.br/front-libs/jquery/1.8.3/jquery-1.8.3.min.js?v=1.5.63.2494"></script>
@@ -862,6 +908,27 @@
         ></script>
 
         <script type="text/javascript">
+          $(".btn-hombre").hover(
+            function () {
+              $("#img-default").fadeOut(200);
+              $("#img-hombre").fadeIn(200);
+            },
+            function () {
+              $("#img-hombre").fadeOut(200);
+              $("#img-default").fadeIn(200);
+            }
+          );
+          $(".btn-mujer").hover(
+            function () {
+              $("#img-default").fadeOut(200);
+              $("#img-mujer").fadeIn(200);
+            },
+            function () {
+              $("#img-mujer").fadeOut(200);
+              $("#img-default").fadeIn(200);
+            }
+          );
+
           if ($(window).width() <= 600) {
             $(".o-openMenuMobile").click(function () {
               $(".o-openMenuMobile").addClass("hide");
@@ -894,15 +961,9 @@
             });
             /* OCULTAR Y MOSTRAR OTROS MENÚS*/
 
-            
-
             $(document).on("click", ".mm-items > li", function (e) {
+              console.log($(this).attr("id"));
 
-              
-              console.log($(this).attr('id'));
-              
-            
-              
               /*var seleccion = $(this).text();
               switch (seleccion) {
                 case "value":
@@ -917,7 +978,6 @@
                   break;
               }*/
             });
-            
 
             $(document).on(
               "click",
