@@ -796,7 +796,7 @@
               <ul class="mm-items">
                 <li id="ola"><a>NUEVO</a></li>
                 <li><a>JEANS</a></li>
-                <li><a>ROPA</a></li>
+                <li id="ropa-hombre"><a>ROPA</a></li>
                 <li><a>POLOS</a></li>
                 <li><a>ZAPATOS</a></li>
                 <li><a>UNDERWEAR</a></li>
@@ -877,10 +877,7 @@
                 <div class="o-r-l">
                   <img src="./img/para-salir.png" alt="Outfit para salir" />
                   <img src="./img/chaquetas.png" alt="Chaquetas en Quest" />
-                  <div class="o-cat-title">
-                    <h2>CAMISETAS</h2>
-                    <a class="o-custom-btn" href=""> VER MÁS</a>
-                  </div>
+                  
                 </div>
                 <div class="o-r-r">
                   <img src="./img/enterizos.png" alt="Enterizos en Quest" />
@@ -912,24 +909,28 @@
         ></script>
 
         <script type="text/javascript">
-          if ($(window).width() >= 600) {
-          var num = 62; //number of pixels before modifying styles
-
-          $(window).bind("scroll", function () {
-            if ($(window).scrollTop() > num) {
-              $(".container-bottom-header").addClass("fixed");
-            } else {
-              $(".container-bottom-header").removeClass("fixed");
-            }
-
-            if ($(window).scrollTop() < num) {
-                console.log("nene")
-
-            }
-          });
-
-        }
-
+          /*solo desktop*/
+          if ($(window).width() >= 601) {
+            
+          /*animacion header*/  
+            var lastScrollTop = 0;
+            $(window).scroll(function () {
+              console.log("scrolling")
+              var st = $(this).scrollTop();
+              var banner = $("#header-2023");
+              setTimeout(function () {
+                if (st > lastScrollTop) {
+                  banner.addClass("hidden");
+                  console.log("hid")
+                } else {
+                  banner.removeClass("hidden");
+                  console.log("shown")
+                }
+                lastScrollTop = st;
+              }, 100);
+            });
+          }
+          /*fades de botones de banner*/
           $(".btn-hombre").hover(
             function () {
               $("#img-default").fadeOut(200);
@@ -950,8 +951,9 @@
               $("#img-default").fadeIn(200);
             }
           );
-
+            /*solo mobile*/
           if ($(window).width() <= 600) {
+            /*abrir y cerrar menú*/
             $(".o-openMenuMobile").click(function () {
               $(".o-openMenuMobile").addClass("hide");
               $(".o-closeMenuMobile").addClass("show");
@@ -985,21 +987,21 @@
             /* OCULTAR Y MOSTRAR OTROS MENÚS*/
 
             $(document).on("click", ".mm-items > li", function (e) {
-              console.log($(this).attr("id"));
+            
 
-              /*var seleccion = $(this).text();
+              var seleccion = $(this).attr("id");
+              console.log(seleccion);
               switch (seleccion) {
+                
                 case "value":
                   break;
-                case "ROPA":
+                case "ropa-hombre":
                   $(".mm-ropa").addClass("mm-transladar");
-                  $(".mm-ropa").addClass("mm-transladar");
-                
                   break;
 
                 default:
                   break;
-              }*/
+              }
             });
 
             $(document).on(
